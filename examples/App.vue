@@ -3,6 +3,9 @@
     <skeleton :data="list">
       <div v-for="(item, index) in list" :key="index">{{item}}</div>
     </skeleton>
+    <skeleton :data="formData">
+      <div>{{formData.username}}</div>
+    </skeleton>
   </div>
 </template>
 
@@ -15,12 +18,15 @@ export default {
   mounted() {
     setTimeout(() => {
       this.list = [1,2,3]
-      console.log(this.list);
+      this.formData = {
+        username: 'kun'
+      }
     }, 1000);
   },
   data() {
     return {
-      list: []
+      list: [],
+      formData: {}
     }
   }
 }

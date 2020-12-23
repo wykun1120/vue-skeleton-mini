@@ -2,7 +2,7 @@
   <div>
     <loading v-if="defaultLoading && loading" />
     <slot name="loading" v-if="!defaultLoading && loading"></slot>
-    <slot v-else></slot>
+    <slot v-if="!loading"></slot>
   </div>
 </template>
 
@@ -20,10 +20,14 @@ export default {
     }
   },
   watch: {
-    data() {
-      if (this.loading) {
-        this.loading = false
-      }
+    data: {
+      handler() {
+        console.log('change');
+        if (this.loading) {
+          this.loading = false
+        }
+      },
+      deep: true
     }
   },
   components: {

@@ -7,7 +7,17 @@ npm i vue-skeleton-mini --save
 
 ## Use
 ```
+import Vue from 'vue'
+import App from './App.vue'
+import Skeleton from 'vue-skeleton-mini'
+import 'vue-skeleton-mini/lib/skeleton.css'
 
+Vue.use(Skeleton)
+Vue.config.productionTip = false
+
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
 ```
 
 ## Example
@@ -18,3 +28,6 @@ npm i vue-skeleton-mini --save
   </div>
 </skeleton>
 ```
+
+## License
+MIT
