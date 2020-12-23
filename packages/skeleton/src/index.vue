@@ -1,13 +1,13 @@
 <template>
   <div>
-    <loading v-if="defaultLoading && loading" />
-    <slot name="loading" v-if="!defaultLoading && loading"></slot>
+    <default :animate="animate" v-if="defaultLoading && loading && animateName === ''" />
+    <slot name="custom" v-if="!defaultLoading && loading"></slot>
     <slot v-if="!loading"></slot>
   </div>
 </template>
 
 <script>
-import Loading from './loading'
+import Default from './default'
 export default {
   name: 'Skeleton',
   props: {
@@ -17,6 +17,14 @@ export default {
     defaultLoading: {
       type: Boolean,
       default: true
+    },
+    animate: {
+      type: Boolean,
+      default: false
+    },
+    animateName: {
+      type: String,
+      default: ''
     }
   },
   watch: {
@@ -31,7 +39,7 @@ export default {
     }
   },
   components: {
-    Loading
+    Default
   },
   data () {
     return {
