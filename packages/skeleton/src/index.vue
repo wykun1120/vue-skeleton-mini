@@ -1,6 +1,7 @@
 <template>
   <div>
     <default :animate="animate" v-if="defaultRender && loading && animateName === ''" />
+    <table-skeleton v-if="animateName === constants.TABLE_SKELETON && loading" />
     <slot name="custom" v-if="!defaultRender && loading"></slot>
     <slot v-if="!loading"></slot>
   </div>
@@ -8,6 +9,8 @@
 
 <script>
 import Default from './default'
+import TableSkeleton from './table'
+import CONSTANTS from './constants'
 export default {
   name: 'Skeleton',
   props: {
@@ -40,11 +43,13 @@ export default {
     }
   },
   components: {
-    Default
+    Default,
+    TableSkeleton
   },
   data () {
     return {
-      loading: true
+      loading: true,
+      constants: CONSTANTS
     }
   }
 }

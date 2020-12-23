@@ -12,13 +12,19 @@
         <div>{{formData.username}}</div>
       </skeleton>
     </div>
-    <h1>自定义</h1>
+    <h1>自定义组件</h1>
     <div class="container">
       <skeleton :data="formData" :defaultRender="false">
         <template v-slot:custom>
           <div>Skeleton</div>
         </template>
         <div>{{formData.username}}</div>
+      </skeleton>
+    </div>
+    <h1>表格</h1>
+    <div class="container">
+      <skeleton :data="list" animateName="table">
+        <div class="list-item" v-for="(item, index) in list" :key="index">{{item}}</div>
       </skeleton>
     </div>
   </div>
@@ -52,6 +58,6 @@ export default {
   height: 200px;
 }
 .list-item {
-  padding: 10px;
+  padding: 6px;
 }
 </style>

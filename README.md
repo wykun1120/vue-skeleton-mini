@@ -24,11 +24,14 @@ new Vue({
 https://wykun1120.github.io/vue-skeleton-mini/
 
 ## Config
-| 参数 | 功能 | 类型 | 默认值 |
-| ---- | ---- | ---- | ---- |
-| data | 监听的数据 | any | null |
-| defaultRender | 默认样式 | boolean | true |
-| animate | 动画 | boolean | false |
+| 参数 | 功能 | 类型 | 可选值 | 默认值 |
+| ---- | ---- | ---- | ---- | ---- |
+| data | 监听的数据 | any | - | null |
+| defaultRender | 默认样式 | boolean | - | true |
+| animate | 动画 | boolean | - | false |
+| animateName | 内置骨架 | string | table | '' |
+
+## animateName
 
 ## Example
 ```
