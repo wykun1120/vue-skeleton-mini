@@ -20,12 +20,34 @@ new Vue({
 }).$mount('#app')
 ```
 
+## Demo
+https://wykun1120.github.io/vue-skeleton-mini/
+
+## Config
+| 参数 | 功能 | 类型 | 默认值 |
+| ---- | ---- | ---- | ---- |
+| data | 监听的数据 | any | null |
+| defaultRender | 默认样式 | boolean | true |
+| animate | 动画 | boolean | false |
+
 ## Example
 ```
+<!-- 默认 -->
 <skeleton :data="list">
-  <div>
-    <div v-for="(item, index) in list" :key="index">{{item}}</div>
-  </div>
+  <div class="list-item" v-for="(item, index) in list" :key="index">{{item}}</div>
+</skeleton>
+
+<!-- 动画 -->
+<skeleton :data="formData" animate>
+  <div>{{formData.username}}</div>
+</skeleton>
+
+<!-- 自定义 -->
+<skeleton :data="formData" :defaultLoading="false">
+  <template v-slot:custom>
+    <div>Skeleton</div>
+  </template>
+  <div>{{formData.username}}</div>
 </skeleton>
 ```
 

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <default :animate="animate" v-if="defaultLoading && loading && animateName === ''" />
-    <slot name="custom" v-if="!defaultLoading && loading"></slot>
+    <default :animate="animate" v-if="defaultRender && loading && animateName === ''" />
+    <slot name="custom" v-if="!defaultRender && loading"></slot>
     <slot v-if="!loading"></slot>
   </div>
 </template>
@@ -12,9 +12,10 @@ export default {
   name: 'Skeleton',
   props: {
     data: {
-      type: [Array, Object, Boolean, String]
+      type: [Array, Object, Boolean, String],
+      default: null
     },
-    defaultLoading: {
+    defaultRender: {
       type: Boolean,
       default: true
     },
