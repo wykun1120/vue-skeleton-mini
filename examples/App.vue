@@ -14,7 +14,7 @@
     </div>
     <h1>自定义</h1>
     <div class="container">
-      <skeleton :data="formData" :defaultLoading="false">
+      <skeleton :data="formData" :defaultRender="false">
         <template v-slot:custom>
           <div>Skeleton</div>
         </template>
