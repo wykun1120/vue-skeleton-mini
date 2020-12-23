@@ -2,6 +2,7 @@
   <div>
     <default :animate="animate" v-if="defaultRender && loading && animateName === ''" />
     <table-skeleton v-if="animateName === constants.TABLE_SKELETON && loading" />
+    <line-skeleton v-if="animateName === constants.LINE_SKELETON && loading" />
     <slot name="custom" v-if="!defaultRender && loading"></slot>
     <slot v-if="!loading"></slot>
   </div>
@@ -10,6 +11,7 @@
 <script>
 import Default from './default'
 import TableSkeleton from './table'
+import LineSkeleton from './line'
 import CONSTANTS from './constants'
 export default {
   name: 'Skeleton',
@@ -44,7 +46,8 @@ export default {
   },
   components: {
     Default,
-    TableSkeleton
+    TableSkeleton,
+    LineSkeleton
   },
   data () {
     return {

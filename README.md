@@ -29,7 +29,7 @@ https://wykun1120.github.io/vue-skeleton-mini/
 | data | 监听的数据 | any | - | null |
 | defaultRender | 默认样式 | boolean | - | true |
 | animate | 动画 | boolean | - | false |
-| animateName | 内置骨架 | string | table | '' |
+| animateName | 内置骨架 | string | table, line | '' |
 
 ## animateName
 

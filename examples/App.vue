@@ -27,6 +27,12 @@
         <div class="list-item" v-for="(item, index) in list" :key="index">{{item}}</div>
       </skeleton>
     </div>
+    <h1>单行</h1>
+    <div class="container">
+      <skeleton :data="list" animateName="line">
+        <div class="list-item" v-for="(item, index) in list" :key="index">{{item}}</div>
+      </skeleton>
+    </div>
   </div>
 </template>
 
