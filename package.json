@@ -1,6 +1,6 @@
 {
   "name": "vue-skeleton-mini",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "private": false,
   "main": "lib/skeleton.umd.min.js",
   "scripts": {

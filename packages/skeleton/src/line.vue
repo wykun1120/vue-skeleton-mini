@@ -6,6 +6,11 @@
 
 <script>
 export default {
+  props: {
+    animate: {
+      type: Boolean
+    }
+  },
   components: {
 
   },

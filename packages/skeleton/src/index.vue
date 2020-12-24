@@ -1,8 +1,8 @@
 <template>
   <div>
     <default :animate="animate" v-if="defaultRender && loading && animateName === ''" />
-    <table-skeleton v-if="animateName === constants.TABLE_SKELETON && loading" />
-    <line-skeleton v-if="animateName === constants.LINE_SKELETON && loading" />
+    <table-skeleton v-if="animateName === constants.TABLE_SKELETON && loading" :animate="animate" />
+    <line-skeleton v-if="animateName === constants.LINE_SKELETON && loading" :animate="animate" />
     <slot name="custom" v-if="!defaultRender && loading"></slot>
     <slot v-if="!loading"></slot>
   </div>
@@ -31,17 +31,38 @@ export default {
     animateName: {
       type: String,
       default: ''
+    },
+    all: {
+      type: Boolean,
+      default: false
+    },
+    timeOut: {
+      type: Number,
+      default: 0
     }
   },
   watch: {
     data: {
-      handler() {
+      handler(newVal, oldVal) {
         console.log('change');
-        if (this.loading) {
-          this.loading = false
+        if (this.all) {
+          const allChange = newVal.every((item, index) => item !== oldVal[index])
+          if (allChange) {
+            this.changeLoading()
+          }
+        } else {
+          this.changeLoading()
         }
       },
       deep: true
+    }
+  },
+  created() {
+    if (this.timeOut > 0) {
+      console.log(this.timeOut);
+      setTimeout(() => {
+        this.changeLoading()
+      }, this.timeOut)
     }
   },
   components: {
@@ -53,6 +74,13 @@ export default {
     return {
       loading: true,
       constants: CONSTANTS
+    }
+  },
+  methods: {
+    changeLoading() {
+      if (this.loading) {
+        this.loading = false
+      }
     }
   }
 }

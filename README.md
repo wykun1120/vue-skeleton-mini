@@ -30,7 +30,8 @@ https://wykun1120.github.io/vue-skeleton-mini/
 | defaultRender | 默认样式 | boolean | - | true |
 | animate | 动画 | boolean | - | false |
 | animateName | 内置骨架 | string | table, line | '' |
-
+| all | 多数据同时监听 | boolean | - | false |
+| timeOut | 超时 | number | - | 0 |
 ## animateName
 
 ## Example
@@ -52,6 +53,13 @@ https://wykun1120.github.io/vue-skeleton-mini/
   </template>
   <div>{{formData.username}}</div>
 </skeleton>
+
+<!-- 多数据同时满足 -->
+<div class="container">
+  <skeleton :data="[list, formData]" all animateName="line">
+    <div class="list-item" v-for="(item, index) in list" :key="index">{{item}}</div>
+  </skeleton>
+</div>
 ```
 
 ## License
