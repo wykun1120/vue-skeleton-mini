@@ -60,7 +60,7 @@ export default {
       this.formData = {
         username: 'username'
       }
-    }, 50000);
+    }, 2000);
   },
   data() {
     return {
