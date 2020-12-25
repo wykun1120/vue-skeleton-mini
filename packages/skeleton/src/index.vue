@@ -44,7 +44,6 @@ export default {
   watch: {
     data: {
       handler(newVal, oldVal) {
-        console.log('change');
         if (this.all) {
           const allChange = newVal.every((item, index) => item !== oldVal[index])
           if (allChange) {

@@ -41,7 +41,7 @@
     </div>
     <h1>超时设置</h1>
     <div class="container">
-      <skeleton :data="list" all :timeOut="1000" animateName="line">
+      <skeleton :data="list" :timeOut="1000" animateName="line">
         <div class="list-item" v-for="(item, index) in list" :key="index">{{item}}</div>
       </skeleton>
     </div>
