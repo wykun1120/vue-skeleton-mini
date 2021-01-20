@@ -58,7 +58,6 @@ export default {
   },
   created() {
     if (this.timeOut > 0) {
-      console.log(this.timeOut);
       setTimeout(() => {
         this.changeLoading()
       }, this.timeOut)

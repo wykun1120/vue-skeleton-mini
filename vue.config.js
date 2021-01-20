@@ -1,7 +1,7 @@
-const path = require('path')
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
-}
+// const path = require('path')
+// function resolve (dir) {
+//   return path.join(__dirname, '..', dir)
+// }
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
@@ -15,16 +15,16 @@ module.exports = {
       filename: 'index.html'
     }
   },
-  chainWebpack: config => {
-    config.module
-      .rule('js')
-      .include
-      .add(resolve('packages'))
-      .end()
-      .use('babel')
-      .loader('babel-loader')
-      .tap(options => {
-        return options
-      })
-  }
+  // chainWebpack: config => {
+  //   config.module
+  //     .rule('js')
+  //     .include
+  //     .add(resolve('packages'))
+  //     .end()
+  //     .use('babel')
+  //     .loader('babel-loader')
+  //     .tap(options => {
+  //       return options
+  //     })
+  // }
 }
