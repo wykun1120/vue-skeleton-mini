@@ -43,7 +43,7 @@ export default {
   },
   watch: {
     data: {
-      handler(newVal, oldVal) {
+      handler (newVal, oldVal) {
         if (this.all) {
           const allChange = newVal.every((item, index) => item !== oldVal[index])
           if (allChange) {
@@ -56,7 +56,7 @@ export default {
       deep: true
     }
   },
-  created() {
+  created () {
     if (this.timeOut > 0) {
       setTimeout(() => {
         this.changeLoading()
@@ -75,7 +75,7 @@ export default {
     }
   },
   methods: {
-    changeLoading() {
+    changeLoading () {
       if (this.loading) {
         this.loading = false
       }

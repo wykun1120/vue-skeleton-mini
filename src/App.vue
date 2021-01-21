@@ -54,15 +54,15 @@ export default {
   components: {
 
   },
-  mounted() {
+  mounted () {
     setTimeout(() => {
-      this.list = [1,2,3]
+      this.list = [1, 2, 3]
       this.formData = {
         username: 'username'
       }
-    }, 2000);
+    }, 2000)
   },
-  data() {
+  data () {
     return {
       list: [],
       formData: {}
